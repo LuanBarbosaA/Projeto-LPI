@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Feed
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-toolbar class="bg-search-bar">
+    <ion-searchbar animated="true" showCancelButton="false"></ion-searchbar>
+  </ion-toolbar>
+  <ion-card *ngFor="let promocao of promocoes">
+    <ion-card-header (click)="cardModal(promocao.id)">
+      <img src="{{promocao.img}}">
+    </ion-card-header>
+    <ion-card-title padding (click)="cardModal(promocao.id)">
+      {{promocao.nome_promocao}}
+    </ion-card-title>
+    <ion-card-content (click)="cardModal(promocao.id)">
+      {{promocao.texto}}
+    </ion-card-content>
+    <ion-item>
+      <ion-icon name="thermometer"></ion-icon>
+      <ion-range></ion-range>
+      <ion-icon name="thermometer"></ion-icon>
+    </ion-item>
+    <ion-row align-items-center>
+      <ion-col>
+        <ion-row justify-content-center align-items-center>
+          <ion-button fill="clear" size="small"><ion-icon name="remove"></ion-icon></ion-button>
+          <ion-label>{{promocao.temperatura}}°</ion-label>
+          <ion-button fill="clear" size="small"><ion-icon name="add"></ion-icon></ion-button>
+        </ion-row>
+      </ion-col>
+      <ion-col>
+        <ion-row justify-content-center>
+          <ion-button fill="clear"><ion-icon name="thumbs-up"></ion-icon></ion-button>
+        </ion-row>        
+      </ion-col>
+    </ion-row>
+  </ion-card>
+</ion-content>

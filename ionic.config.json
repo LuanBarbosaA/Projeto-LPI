@@ -1,0 +1,7 @@
+{
+  "name": "celsius",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Nome produto</ion-title>
+    <ion-button slot="end" (click)="dismiss()">Close</ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <img src="{{promocao.img}}">
+    </ion-card-header>
+    <ion-card-title padding>
+      {{promocao.nome_promocao}}
+    </ion-card-title>
+    <ion-card-content>
+      {{promocao.texto}}
+    </ion-card-content>
+    <ion-progress-bar value="1"></ion-progress-bar>
+    <ion-row align-items-center>
+      <ion-col>
+        <ion-row justify-content-center align-items-center>
+          <ion-button fill="clear" size="small"><ion-icon name="remove"></ion-icon></ion-button>
+          <ion-label>{{promocao.temperatura}}°</ion-label>
+          <ion-button fill="clear" size="small"><ion-icon name="add"></ion-icon></ion-button>
+        </ion-row>
+      </ion-col>
+      <ion-col>
+        <ion-row justify-content-center>
+          <ion-button fill="clear"><ion-icon name="thumbs-up"></ion-icon></ion-button>
+        </ion-row>        
+      </ion-col>
+    </ion-row>
+  </ion-card>
+</ion-content>

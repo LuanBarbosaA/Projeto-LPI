@@ -13,34 +13,33 @@
   <ion-toolbar class="bg-search-bar">
     <ion-searchbar animated="true" showCancelButton="false"></ion-searchbar>
   </ion-toolbar>
-  <ion-card *ngFor="let promocao of promocoes">
+  <ion-card *ngFor="let promocao of promocoes; let i = index">
     <ion-card-header (click)="cardModal(promocao.id)">
       <img src="{{promocao.img}}">
     </ion-card-header>
     <ion-card-title padding (click)="cardModal(promocao.id)">
-      {{promocao.nome_promocao}}
+      {{promocao.nome_promocao}} R$:{{promocao.valor}}
     </ion-card-title>
     <ion-card-content (click)="cardModal(promocao.id)">
       {{promocao.texto}}
     </ion-card-content>
+    <ion-label class="label">Avaliação média</ion-label>
     <ion-item>
-      <ion-icon name="thermometer"></ion-icon>
-      <ion-range></ion-range>
-      <ion-icon name="thermometer"></ion-icon>
-    </ion-item>
-    <ion-row align-items-center>
-      <ion-col>
-        <ion-row justify-content-center align-items-center>
-          <ion-button fill="clear" size="small"><ion-icon name="remove"></ion-icon></ion-button>
-          <ion-label>{{promocao.temperatura}}°</ion-label>
-          <ion-button fill="clear" size="small"><ion-icon name="add"></ion-icon></ion-button>
-        </ion-row>
-      </ion-col>
-      <ion-col>
+      <ion-grid>
         <ion-row justify-content-center>
-          <ion-button fill="clear"><ion-icon name="thumbs-up"></ion-icon></ion-button>
-        </ion-row>        
-      </ion-col>
-    </ion-row>
+          <ion-item lines="none">
+            <!-- <ion-icon name="thermometer" [ngStyle]="{'color':getColor(promocao.id)}"></ion-icon> -->
+            <ion-icon #icon name="thermometer" [ngStyle]="{'color':getColor(icon, promocao.id)}"></ion-icon>
+            <ion-label>{{promocao.temperatura}}°</ion-label>
+          </ion-item>
+        </ion-row>
+      </ion-grid>     
+    </ion-item>
+    <ion-label class="label">Sua avaliação</ion-label>
+    <ion-item>
+      <ion-icon name="thermometer" size="small" color="primary"></ion-icon>
+      <ion-range #range step="25" min="0" max="100" snaps="true" pin="true" (ionChange)="mudarCorRange(range)"></ion-range>
+      <ion-icon name="thermometer" color="danger"></ion-icon>
+    </ion-item>
   </ion-card>
 </ion-content>

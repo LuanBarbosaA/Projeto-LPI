@@ -10,3 +10,9 @@ ion-card-header{
 ion-progress-bar{
     --progress-background: linear-gradient(90deg, #f12711, #f5af19 );
 }
+.label{
+    color: black;
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}

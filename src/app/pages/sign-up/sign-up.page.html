@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-row>       
+        <ion-button routerLink="/welcome" routerDirection="backward" fill="clear">
+          <ion-icon name="arrow-round-back"></ion-icon>
+        </ion-button>
+        <ion-title>Sign Up</ion-title>
+      </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form>
+    <ion-list>
+
+      <ion-item>
+        <ion-label fixed>Nome</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>Email</ion-label>
+        <ion-input type="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>Password</ion-label>
+        <ion-input type="password"></ion-input>
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-label fixed>Empresa</ion-label>
+        <ion-toggle #toggle></ion-toggle>
+      </ion-item>
+
+      <ion-item *ngIf="toggle.checked" >
+        <ion-label fixed>Cnpj</ion-label>
+        <ion-input type="number"></ion-input>
+      </ion-item>
+
+      <ion-button padding expand="block" routerLink="/feed" routerDirection="forward">Avançar</ion-button>
+
+    </ion-list>
+  </form>
+</ion-content>

@@ -4,3 +4,6 @@ ion-card-header{
 ion-progress-bar{
     --progress-background: linear-gradient(90deg, #f12711, #f5af19 );
 }
+.no-padding{
+    padding: unset;
+}

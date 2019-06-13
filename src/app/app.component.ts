@@ -15,6 +15,11 @@ export class AppComponent {
       url: '/feed',
       icon: 'paper'
     },
+    {
+      title: 'Favoritos',
+      url: '/favoritos',
+      icon: 'star'
+    }
   ];
 
   constructor(

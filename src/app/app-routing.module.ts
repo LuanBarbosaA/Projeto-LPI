@@ -15,7 +15,8 @@ const routes: Routes = [
   { path: 'welcome', loadChildren: './pages/welcome/welcome.module#WelcomePageModule' },
   { path: 'sign-in', loadChildren: './pages/sign-in/sign-in.module#SignInPageModule' },
   { path: 'sign-up', loadChildren: './pages/sign-up/sign-up.module#SignUpPageModule' },
-  { path: 'endereco', loadChildren: './pages/endereco/endereco.module#EnderecoPageModule' }
+  { path: 'endereco', loadChildren: './pages/endereco/endereco.module#EnderecoPageModule' },
+  { path: 'favoritos', loadChildren: './pages/favoritos/favoritos.module#FavoritosPageModule' }
 ];
 
 @NgModule({

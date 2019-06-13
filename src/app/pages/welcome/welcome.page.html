@@ -1,29 +1,23 @@
 <ion-content class="image">
-  <ion-card>
-    <ion-card-header>
-      <!-- <ion-icon name="thermometer" class="icon"></ion-icon> -->
-      <ion-card-title>
-        Sign In
-      </ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <ion-input type="email" placeholder="Email"></ion-input>
-      <ion-input type="password" placeholder="Password"></ion-input>
-    </ion-card-content>
-    <ion-button color="light" expand="block" routerLink="/sign-up" routerDirection="forward">Sing Up</ion-button>
-    <ion-button color="danger" expand="block" routerLink="/feed" routerDirection="forward"><ion-icon name="logo-google"></ion-icon>Sing In with Google</ion-button>
-    <ion-button color="primary" expand="block" routerLink="/feed" routerDirection="forward"><ion-icon name="logo-facebook"></ion-icon>Sing In with Facebook</ion-button>
-  </ion-card>
-    
-  <!-- <ion-grid> -->
-    <!-- <ion-row justify-content-center> -->
-      <!-- <ion-icon name="thermometer" class="icon"></ion-icon> -->
-      
-    <!-- </ion-row> -->
-    <!-- <ion-row justify-content-center>
-      <ion-toolbar>
-        <ion-title text-center>Bem vindo</ion-title>
-      </ion-toolbar>
-    </ion-row> -->
-    <!-- </ion-grid> -->
+  <ion-grid>
+    <ion-row align-items-center>
+      <ion-col>
+        <ion-card>
+          <ion-card-header>
+            <!-- <ion-icon name="thermometer" class="icon"></ion-icon> -->
+            <ion-card-title>
+              Sign In
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-input type="email" placeholder="Email"></ion-input>
+            <ion-input type="password" placeholder="Password"></ion-input>
+          </ion-card-content>
+          <ion-button color="light" expand="block" routerLink="/sign-up" routerDirection="forward">Sing Up</ion-button>
+          <ion-button color="danger" expand="block" routerLink="/feed" routerDirection="forward"><ion-icon name="logo-google"></ion-icon>Sing In with Google</ion-button>
+          <ion-button color="primary" expand="block" routerLink="/feed" routerDirection="forward"><ion-icon name="logo-facebook"></ion-icon>Sing In with Facebook</ion-button>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

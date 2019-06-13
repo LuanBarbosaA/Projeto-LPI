@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>Nome produto</ion-title>
-    <ion-button slot="end" (click)="dismiss()">Close</ion-button>
+    <ion-button slot="end" (click)="dismiss()">Fechar</ion-button>
   </ion-toolbar>
 </ion-header>
 
@@ -11,14 +11,41 @@
       <img src="{{promocao.img}}">
     </ion-card-header>
     <ion-card-title padding>
-      {{promocao.nome_promocao}}
+      <ion-grid class="no-padding">
+        <ion-row align-items-center>
+          <ion-col size="10" class="no-padding">{{promocao.nome_promocao}} R$ {{promocao.valor}}</ion-col>
+          <ion-col size="2" class="no-padding" (click)="favorito(promocao.id)"><ion-button fill="clear"><ion-icon name="bookmark"></ion-icon></ion-button></ion-col>
+        </ion-row>
+      </ion-grid>
     </ion-card-title>
     <ion-card-content>
       {{promocao.texto}}
     </ion-card-content>
+    <ion-item lines="none">
+      <ion-icon name="business"></ion-icon>
+      <ion-label> Empresa: X</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Localização</ion-label>
+      <ion-button fill="clear" size="large"><ion-icon name="compass"></ion-icon></ion-button>      
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label>José Silva</ion-label>
+      <ion-avatar slot="start">
+        <img src="../../../assets/img/avatar.png">
+      </ion-avatar>
+      <ion-button fill="clear"><ion-icon name="star"></ion-icon></ion-button>
+      <ion-button fill="clear"><ion-icon name="star"></ion-icon></ion-button>
+      <ion-button fill="clear"><ion-icon name="star"></ion-icon></ion-button>
+      <ion-button fill="clear"><ion-icon name="star-half"></ion-icon></ion-button>
+      <ion-button fill="clear"><ion-icon name="star-outline"></ion-icon></ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-textarea readonly value="Essa promoção é simplesmente demais!!!"></ion-textarea>
+    </ion-item>
     <ion-item>
       <ion-icon name="thermometer" size="small" color="primary"></ion-icon>
-      <ion-range #range [ngStyle]="{'color':getColor(range)}" step="25" min="0" max="100" snaps="true" pin="true" [value]="promocao.temperatura"></ion-range>
+      <ion-range step="25" min="0" max="100" snaps="true" pin="true" (ionChange)="changeColor()" [value]="promocao.temperatura"></ion-range>
       <ion-icon name="thermometer" color="danger"></ion-icon>
     </ion-item>
   </ion-card>

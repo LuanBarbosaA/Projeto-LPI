@@ -2,16 +2,16 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
-import { ModalCardPage } from './../modal-card/modal-card.page';
 
 import { IonicModule } from '@ionic/angular';
 
-import { FeedPage } from './feed.page';
+import { FavoritosPage } from './favoritos.page';
+import { ModalCardPage } from './../modal-card/modal-card.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: FeedPage
+    component: FavoritosPage
   }
 ];
 
@@ -23,7 +23,7 @@ const routes: Routes = [
     //NovoModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [FeedPage, ModalCardPage],
-  entryComponents: [ModalCardPage]
+  declarations: [FavoritosPage],
+  entryComponents: []
 })
-export class FeedPageModule {}
+export class FavoritosPageModule {}

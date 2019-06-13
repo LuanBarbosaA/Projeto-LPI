@@ -4,7 +4,7 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>
-      Feed
+      Favoritos
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -14,18 +14,18 @@
     <ion-searchbar animated="true" showCancelButton="false"></ion-searchbar>
   </ion-toolbar>
   <ion-card *ngFor="let promocao of promocoes">
-    <ion-card-header (click)="cardModal(promocao.id)">
+    <ion-card-header>
       <img src="{{promocao.img}}">
     </ion-card-header>
     <ion-card-title padding>
       <ion-grid class="no-padding">
         <ion-row align-items-center>
-          <ion-col size="10" class="no-padding" (click)="cardModal(promocao.id)">{{promocao.nome_promocao}} R$ {{promocao.valor}}</ion-col>
-          <ion-col size="2" class="no-padding" (click)="favorito(promocao.id)"><ion-button fill="clear"><ion-icon name="bookmark"></ion-icon></ion-button></ion-col>
+          <ion-col size="10" class="no-padding">{{promocao.nome_promocao}} R$ {{promocao.valor}}</ion-col>
+          <ion-col size="2" class="no-padding"><ion-button fill="clear"><ion-icon name="bookmark"></ion-icon></ion-button></ion-col>
         </ion-row>
       </ion-grid>
     </ion-card-title>
-    <ion-card-content (click)="cardModal(promocao.id)">
+    <ion-card-content>
       {{promocao.texto}}
     </ion-card-content>
     <ion-label class="label">Avaliação média</ion-label>

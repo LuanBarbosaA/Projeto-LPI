@@ -5,4 +5,5 @@ export class Promocao{
     texto: String;
     valor: Number;
     temperatura: Number;
+    favorito: boolean;
 }
